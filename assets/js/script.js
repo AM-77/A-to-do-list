@@ -1,18 +1,27 @@
 
 function update() {
-    var tasks = $('.tasks ul').get(0).childNodes;
-    console.log(tasks)
-/*
-    for (var i = 0; i < tasks.length; i++) {
-
-        var key = 'task' + (tasks.length - i - 1);
-        console.log(tasks[i])
-        //localStorage[key] = tasks[i].childNodes[1].innerText;
-        //tasks[i].id = key;
-        
+    let tasks = $('.tasks ul').get(0).childNodes;
+    
+    for (let i = 0; i < tasks.length; i++) {
+      localStorage['task' + (tasks.length - i - 1)] = tasks[i].textContent
+      tasks[i].id = 'task' + (tasks.length - i - 1)
     }
-    localStorage.removeItem('task0'); */
+    
+    removeItem('task' + tasks.length-1)
 }
+
+function removeItem(item){
+    if(localStorage.getItem(item) != undefined)
+        localStorage.removeItem(item)
+}
+
+/*
+function notify() {
+    chrome.browserAction.setBadgeText({
+      text: localStorage.length ? localStorage.length + '' : ''
+    });
+}
+  */
 
 $(document).ready(function() {
 
