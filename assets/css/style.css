@@ -29,33 +29,35 @@
 }
 
 .container .add .add_input label{
-    display: block;
+    display: inline;
     position: relative;
-    top: 2px;
+    top: 20px;
 }
 .container .add .add_input label.active{
-    animation: active_label 400ms cubic-bezier(0.96, 0.96, 0, -0.01) forwards;
+    animation: active_label 200ms ease-in-out forwards running;
 }
 
 .container .add .add_input label.desactive{
-    animation: desactive_label 400ms cubic-bezier(0.96, 0.96, 0, -0.01) forwards;
+    animation: desactive_label 200ms ease-in-out forwards running;
 }
 
 @keyframes active_label{
     0%{
-        top: 2px
+        top: 20px
     }
     100%{
-        width: 20px
+        top: 2px;
+        color: #00964b
     }
 }
 
 @keyframes desactive_label{
     0%{
-        width: 20px
+        top: 2px
     }
     100%{
-        width: 2px
+        top: 20px;
+        color: #dfdfdf;
     }
 }
 
@@ -78,18 +80,21 @@
     background: #dfdfdf;
 }
 
-.container .add .add_input .underline .inside.active{
+.container .add .add_input .underline .inside{
     display: block;
-    width: 100%;
+    width: 0%;
     height: 100%;
     background: #00964b;
+}
+
+.container .add .add_input .underline .inside.active{
     float: left;
-    animation: active_underline 400ms cubic-bezier(0.96, 0.96, 0, -0.01) forwards;
+    animation: active_underline 200ms ease-in-out forwards running;
 }
 
 .container .add .add_input .underline .inside.desactive{
     float: right;
-    animation: desactive_underline 400ms cubic-bezier(0.96, 0.96, 0, -0.01) forwards;
+    animation: desactive_underline 200ms ease-in-out forwards running;
 }
 
 @keyframes active_underline{
@@ -125,13 +130,15 @@
     width: 100%;
     min-height: 35px;
     background: #232323;
-    border-radius: 3px;
+    border-radius: 2px;
     line-height: 2.5;
     padding-left: 10px;
     cursor: move;
-    transition: all 250ms esae
+    margin-bottom: 5px;
+    transition: all 250ms esae;
 }
 
 .container .tasks ul li:hover{
+    background: #151515;
     box-shadow: 0px 1px 1px 0px #212121;
 }
