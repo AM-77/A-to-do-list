@@ -1,0 +1,137 @@
+*, *:after, *:before{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    display: block;
+    width: 300px;
+    background: #3B3B3B;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 0px #3B3B3B;
+    font-family: roboto;
+    color: #dfdfdf;
+    font-size: 14px;
+    padding: 0px 10px 0px 10px;
+}
+
+.container .add{
+    display: block;
+    width: 100%;
+    padding: 8px 0px 15px 0px;
+}
+
+.container .add .add_input{
+    display: block;
+    width: 100%;
+    font-size: 14px
+}
+
+.container .add .add_input label{
+    display: block;
+    position: relative;
+    top: 2px;
+}
+.container .add .add_input label.active{
+    animation: active_label 400ms cubic-bezier(0.96, 0.96, 0, -0.01) forwards;
+}
+
+.container .add .add_input label.desactive{
+    animation: desactive_label 400ms cubic-bezier(0.96, 0.96, 0, -0.01) forwards;
+}
+
+@keyframes active_label{
+    0%{
+        top: 2px
+    }
+    100%{
+        width: 20px
+    }
+}
+
+@keyframes desactive_label{
+    0%{
+        width: 20px
+    }
+    100%{
+        width: 2px
+    }
+}
+
+.container .add .add_input input{
+    display: block;
+    width: 100%;
+    border: none;
+    height: 25px;
+    color: #dfdfdf;
+    font-family: roboto;
+    font-size: 14px;
+    background: transparent;
+    outline: none;
+}
+
+.container .add .add_input .underline{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #dfdfdf;
+}
+
+.container .add .add_input .underline .inside.active{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #00964b;
+    float: left;
+    animation: active_underline 400ms cubic-bezier(0.96, 0.96, 0, -0.01) forwards;
+}
+
+.container .add .add_input .underline .inside.desactive{
+    float: right;
+    animation: desactive_underline 400ms cubic-bezier(0.96, 0.96, 0, -0.01) forwards;
+}
+
+@keyframes active_underline{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 100%
+    }
+}
+
+@keyframes desactive_underline{
+    0%{
+        width: 100%
+    }
+    100%{
+        width: 0%
+    }
+}
+
+.container .tasks{
+    display: block;
+    padding-bottom: 10px;
+}
+
+.container .tasks ul{
+    display: block;
+    list-style: none;
+}
+
+.container .tasks ul li{
+    display: block;
+    width: 100%;
+    min-height: 35px;
+    background: #232323;
+    border-radius: 3px;
+    line-height: 2.5;
+    padding-left: 10px;
+    cursor: move;
+    transition: all 250ms esae
+}
+
+.container .tasks ul li:hover{
+    box-shadow: 0px 1px 1px 0px #212121;
+}
