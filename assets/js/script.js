@@ -1,10 +1,24 @@
 
 function update() {
+    var tasks = $('.tasks ul').get(0).childNodes;
+    console.log(tasks)
+/*
+    for (var i = 0; i < tasks.length; i++) {
 
+        var key = 'task' + (tasks.length - i - 1);
+        console.log(tasks[i])
+        //localStorage[key] = tasks[i].childNodes[1].innerText;
+        //tasks[i].id = key;
+        
+    }
+    localStorage.removeItem('task0'); */
 }
 
-
 $(document).ready(function() {
+
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+        $('.tasks ul').append(`<li id="${ 'task' + i }" class="a_task"> ${ localStorage['task' + i] } </li>`);
+    }
 
     $('input').focus(function(){
         $('label').removeClass("desactive").addClass("active")
@@ -22,7 +36,8 @@ $(document).ready(function() {
     $('input').keyup(function(e){
         if(e.keyCode == 13 ){
             if($(this).val().trim() != ""){
-                $('.tasks ul').append("<li class='a_task'>"+ $(this).val().trim() +"</li>")
+                $('.tasks ul').prepend("<li class='a_task'>"+ $(this).val().trim() +"</li>")
+                localStorage['task' + localStorage.length] = $(this).val().trim()
             }
             $(this).val("")
         }
