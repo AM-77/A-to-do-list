@@ -1,0 +1,16 @@
+{
+  "name": "A To Do List",
+  "version": "0.1",
+  "description": "A To Do List - It is a Chrome extension that allows you to organize your tasks effectively from your browser.",
+   "icons": {
+    "128": "assets/images/icon.png",
+    "48": "assets/images/icon.png",
+    "16": "assets/images/icon.png"
+  },
+  "browser_action": {
+    "default_icon": "assets/images/icon.png",
+    "default_popup": "assets/html/a-to-do-list.html"
+  },
+  "permissions": ["management"],
+  "manifest_version": 2
+}
